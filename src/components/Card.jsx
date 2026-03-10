@@ -55,7 +55,7 @@ function Card() {
                     {search && (
                         <div className="mt-6 w-full">
                             {filtered.length > 0 ? (
-                                <div className="flex flex-row flex-wrap gap-4">
+                                <div className="flex flex-row flex-wrap gap-4 justify-center">
                                     {filtered.map((item) => (
                                         <Link to={`/student/${item.id}`} key={item.id}>
                                             <div className="bg-white rounded-xl shadow p-4 flex flex-col items-center text-center">
