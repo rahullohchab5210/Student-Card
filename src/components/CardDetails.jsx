@@ -5,10 +5,10 @@ function CardDetails() {
   const { id } = useParams();
 
   const CARD_DATA = [
-    { id: 1, image: '/assets/images/image-1.jpg', title: 'Vinay', course:'Front End Developement', age:"19" },
-    { id: 2, image: '/assets/images/image-2.jpg', title: 'Krish', course:'Back End Developement', age:"20" },
-    { id: 3, image: '/assets/images/image-3.jpg', title: 'Anjali', course:'UI-UX Design', age:"21" },
-    { id: 4, image: '/assets/images/image-4.jpg', title: 'Annu', course:'App Developer', age:"22" },
+    { id: 1, image: '/assets/images/image-1.jpg', name: 'Vinay', course:'Front End Developement', age:"19" },
+    { id: 2, image: '/assets/images/image-2.jpg', name: 'Krish', course:'Back End Developement', age:"20" },
+    { id: 3, image: '/assets/images/image-3.jpg', name: 'Anjali', course:'UI-UX Design', age:"21" },
+    { id: 4, image: '/assets/images/image-4.jpg', name: 'Annu', course:'App Developer', age:"22" },
   ];
 
   const student = CARD_DATA.find((item) => item.id === Number(id));
@@ -21,11 +21,11 @@ function CardDetails() {
           <>
             <img
               src={student.image}
-              alt={student.title}
+              alt={student.name}
               className="mt-5 rounded-xl w-[300px]"
             />
   
-            <p className="text-xl">Name: {student.title}</p>
+            <p className="text-xl">Name: {student.name}</p>
             <p className="text-lg mt-2">Course: {student.course}</p>
             <p className="text-lg mt-2">Age: {student.age}</p>
             
