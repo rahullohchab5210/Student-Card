@@ -39,9 +39,7 @@ function CardDetails() {
         Back
       </Link>
     </div>
-
-
-    
+ 
   )
 }
 
