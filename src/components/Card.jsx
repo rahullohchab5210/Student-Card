@@ -53,26 +53,27 @@ function Card() {
                     />
 
                     {search && (
-                        <div className="mt-6 w-full max-w-md">
-
+                        <div className="mt-6 w-full">
                             {filtered.length > 0 ? (
-                                <Link to={`/student/${filtered[0].id}`}>
-                                    <div className="bg-white rounded-xl shadow p-4 flex flex-col items-center text-center">
-                                        <img src={filtered[0].image} alt="" />
-                                        <h3 className="text-xl font-bold">{filtered[0].name}</h3>
-                                        <p className="text-gray-600">{filtered[0].course}</p>
-                                    </div>
-                                </Link>
+                                <div className="flex flex-row flex-wrap gap-4">
+                                    {filtered.map((item) => (
+                                        <Link to={`/student/${item.id}`} key={item.id}>
+                                            <div className="bg-white rounded-xl shadow p-4 flex flex-col items-center text-center">
+                                                <img src={item.image} alt="" className='rounded-lg' />
+                                                <h3 className="text-xl font-bold">{item.name}</h3>
+                                                <p className="text-gray-600">{item.course}</p>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
                             ) : (
                                 <p className="text-center text-xl font-semibold bg-white p-4 shadow rounded-lg text-red-300">
                                     User Not Found
                                 </p>
                             )}
-
                         </div>
                     )}
                 </div>
-
 
                 {!search && (<div className='flex flex-row flex-wrap -mx-3 gap-y-5 mt-5'>
                     {CARD_DATA.map((student, i) => {
